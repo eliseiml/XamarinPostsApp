@@ -5,10 +5,12 @@ using Posts.DataServices;
 using System.Collections.Generic;
 using FreshMvvm;
 using System.Collections.ObjectModel;
+using Posts.Dependencies;
+using System;
 
 namespace Posts.PageModels
 {
-    public class PostsPageModel: FreshBasePageModel
+    public class PostsPageModel : FreshBasePageModel
     {
         public ObservableCollection<Post> Posts { get; set; }
         private readonly IDataInterface DataInterface;
@@ -16,7 +18,7 @@ namespace Posts.PageModels
         public PostsPageModel()
         {
             Posts = new ObservableCollection<Post>();
-            DataInterface = new PostsWebService();
+            DataInterface = ServiceLocator.GetIDataInterface();
         }
 
         public override void Init(object initData)
@@ -27,6 +29,19 @@ namespace Posts.PageModels
         async void LoadPosts()
         {
             Posts = await DataInterface.LoadPosts();
+        }
+
+        public Post SelectedPost
+        {
+            get { return null; }
+
+            set
+
+            {
+                CoreMethods.PushPageModel<PostDetailsPageModel>(value);
+
+                RaisePropertyChanged();
+            }
         }
     }
 }

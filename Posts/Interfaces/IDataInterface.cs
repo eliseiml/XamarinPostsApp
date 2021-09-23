@@ -9,5 +9,6 @@ namespace Posts.Interfaces
     public interface IDataInterface
     {
         Task<ObservableCollection<Post>> LoadPosts();
+        Task<ObservableCollection<Comment>> LoadComments(int postId);
     }
 }

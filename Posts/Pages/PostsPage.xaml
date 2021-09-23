@@ -22,9 +22,11 @@
             </toolBars:NavigationBar.CentralToolBarItems>
         </toolBars:NavigationBar>
         <!--  End Nav bar  -->
-        <CollectionView x:Name="PostsList"
+
+        <!--<CollectionView x:Name="PostsList"
                         Margin="10,0,10,0"
                         ItemsSource="{Binding Posts}"
+                        SelectedItem="{Binding SelectedPost}"
                         VerticalScrollBarVisibility="Never">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -36,12 +38,35 @@
                                FontSize="Medium"
                                Text="{Binding Title}" />
                         <Label FontSize="Small" Text="{Binding Body}" />
-                        <BoxView HeightRequest=".3" Color="{StaticResource Key=primaryColor}" />
+                        <BoxView HeightRequest=".3" Color="#4f5461" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
 
-        </CollectionView>
+        </CollectionView>-->
+        <ListView Margin="10,0,10,0"
+                  HasUnevenRows="True"
+                  ItemsSource="{Binding Posts}"
+                  SelectedItem="{Binding SelectedPost}"
+                  VerticalScrollBarVisibility="Never">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <BoxView HeightRequest="1" />
+                            <Label Margin="0"
+                                   Padding="0"
+                                   FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   Text="{Binding Title}" />
+                            <Label FontSize="Small" Text="{Binding Body}" />
+                            <BoxView HeightRequest=".3" Color="#4f5461" />
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </StackLayout>
 </ContentPage>

@@ -13,5 +13,9 @@ namespace Posts.Pages
         {
             InitializeComponent();
         }
+
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+        }
     }
 }

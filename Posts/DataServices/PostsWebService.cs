@@ -42,5 +42,10 @@ namespace Posts.DataServices
             return ff;
 
         }
+
+        public async Task<ObservableCollection<Comment>> LoadComments(int postId)
+        {
+            return null;
+        }
     }
 }

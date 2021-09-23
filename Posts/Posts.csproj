@@ -27,6 +27,7 @@
     <None Remove="Newtonsoft.Json" />
     <None Remove="PropertyChanged.Fody" />
     <None Remove="FreshMvvm" />
+    <None Remove="Dependencies\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -35,10 +36,17 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Repositories\" />
     <Folder Include="DataServices\" />
+    <Folder Include="Dependencies\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="NavigationBar2.xaml.cs">
-      <DependentUpon>NavigationBar2.xaml</DependentUpon>
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\PostDetailsPage.xaml.cs">
+      <DependentUpon>PostDetailsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>
