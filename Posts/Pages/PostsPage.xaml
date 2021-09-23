@@ -21,8 +21,8 @@
                 </StackLayout>
             </toolBars:NavigationBar.CentralToolBarItems>
         </toolBars:NavigationBar>
-        <!--  End Nav bar  -->
-
+        <!--  End Navigation bar  -->
+        <!--  ContentView doesn't allow items to be clickableby some reason  -->
         <!--<CollectionView x:Name="PostsList"
                         Margin="10,0,10,0"
                         ItemsSource="{Binding Posts}"
