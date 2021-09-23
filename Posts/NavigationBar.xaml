@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView x:Class="Posts.NavigationBar"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="thisControl">
+    <Grid Padding="0,35,0,0"
+          BackgroundColor="{StaticResource Key=primaryColor}"
+          ColumnSpacing="0"
+          RowSpacing="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Central ToolBar Items  -->
+
+        <StackLayout x:Name="CentralToolBarItemsContainer"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="3"
+                     Margin="13,0,0,0"
+                     Padding="0"
+                     HorizontalOptions="CenterAndExpand"
+                     Orientation="Horizontal"
+                     VerticalOptions="CenterAndExpand">
+            <Label x:Name="TitleLabel"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="False"
+                   Text="Title inside" />
+        </StackLayout>
+
+        <!--  Left ToolBar Items  -->
+
+        <StackLayout x:Name="LeftToolBarItemsContainer"
+                     Grid.Row="0"
+                     Grid.Column="0"
+                     Padding="10,0,0,0"
+                     HorizontalOptions="StartAndExpand"
+                     Orientation="Horizontal"
+                     VerticalOptions="CenterAndExpand" />
+
+        <!--  Right ToolBar Items  -->
+
+        <StackLayout x:Name="RightToolBarItemsContainer"
+                     Grid.Row="0"
+                     Grid.Column="2"
+                     Padding="0,0,10,0"
+                     HorizontalOptions="EndAndExpand"
+                     Orientation="Horizontal"
+                     VerticalOptions="Center" />
+
+        <!--  Separator  -->
+
+        <BoxView Grid.Row="1"
+                 Grid.Column="0"
+                 Grid.ColumnSpan="3"
+                 BackgroundColor="Red"
+                 HeightRequest="0"
+                 HorizontalOptions="FillAndExpand" />
+
+    </Grid>
+</ContentView> 
